@@ -20,4 +20,17 @@ def encrypt(text,shift):
   print(f"The encoded text is {ciphar_text}")        
  
    
-encrypt(text,shift);
+def decrypt(text,shift):
+  plain_text=""
+  for i in text:
+    IndexNo=alphabet.index(i)
+    letter=alphabet[IndexNo-shift]
+    plain_text+=letter
+  print(f"The decoded text is {plain_text}")    
+
+if direction=="encode":
+  encrypt(text,shift)
+elif direction=="decode":
+  decrypt(text,shift)
+else :
+  print("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
