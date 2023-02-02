@@ -5,9 +5,7 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 
 
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+
 
 
 def caesar(direction,text,shift):
@@ -19,6 +17,24 @@ def caesar(direction,text,shift):
     letter=alphabet[indexNo+shift]
     ciphar_text+=letter
     
-  print(f"The {direction} text is {ciphar_text}")        
+  print(f"The {direction} text is {ciphar_text} \n\n")        
 
-caesar(direction,text,shift) 
+import art
+
+print(art.logo);
+
+val=True;
+while val:
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+  if(shift>26):
+    shift=shift%26
+  
+  caesar(direction,text,shift) 
+  condition =input("Type 'yes' if you want to go again. Otherwise type 'no'.\n").lower()
+  if(condition !="yes"):
+    val=False;
+    print("GOOD BYE")
+  else:
+    print("=============================================================\n\n")
